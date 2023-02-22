@@ -19,13 +19,13 @@ app.post('/', upload.single('file'),async(req,res) => {
     const descripcionArr = descripcion.split(',');
     let arrN = nameFile.split('.');
     arrN.pop();
-    await optimizeImg(`./files/${nameFile}`,arrN.join('.'));
+    await optimizeImg(`./src/driver-img/files/${nameFile}`,arrN.join('.'));
     const code = await readFile(arrN.join('.'));
     const storageRef = ref(storageFb, `menu-imgs/${idCard}.webp`);
     uploadString(storageRef, code, 'base64').then((snapshot) => {
       let nameImg =idCard+".webp";
-      removeFile(nameFile, 'files');
-      removeFile(`${arrN.join('.')}.webp`, 'optimize');
+      removeFile(nameFile, 'src/driver-img/files');
+      removeFile(`${arrN.join('.')}.webp`, 'src/driver-img/optimize');
       saveProduct(seccion,nombre,precio,descripcionArr,nameImg,idCard);
       console.log('Uploaded a base64 string!');
     });

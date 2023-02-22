@@ -14,13 +14,13 @@ function removeFile(nameFile, folder){
 function optimizeImg(filePath, filename){
     const newRout = sharp(filePath)
     .resize(300, 300)
-    .toFile(`./optimize/${filename}.webp`);
+    .toFile(`./src/driver-img/optimize/${filename}.webp`);
     return newRout;
 } 
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, './files')
+      cb(null, './src/driver-img/files')
     },
     filename: function (req, file, cb) {
       const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
@@ -31,7 +31,7 @@ const storage = multer.diskStorage({
   });
 
 function readFile(nameFile){
-    const code = fs.readFile( `./optimize/${nameFile}.webp`,{encoding:'base64'});
+    const code = fs.readFile( `./src/driver-img/optimize/${nameFile}.webp`,{encoding:'base64'});
     return code;
 }
 
