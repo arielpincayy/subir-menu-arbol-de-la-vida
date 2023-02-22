@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicar Arbol de la vida</title>
+</head>
+<body>
+    <main>
+        <form enctype="multipart/form-data" method="post">
+            <div class="seccion">
+                <label>Sección</label>
+                <select name="seccion" id="seccion">
+                    <option value="compartir">Compartir</option>
+                    <option value="sanduche">Sanduches</option>
+                    <option value="hamburguesa">Hamburguesas</option>
+                    <option value="pita">Pitas</option>
+                    <option value="pizza">Pizzas</option>
+                    <option value="internacional">Internacional</option>
+                    <option value="ensalada">Ensaladas</option>
+                    <option value="bebida">Bebidas</option>
+                    <option value="helado">Helados</option>
+                    <option value="desayuno">Desayunos</option>
+
+                </select>
+            </div>
+            <div class="nombre">
+                <label>Nombre</label>
+                <input type="text" name="nombre" id="nombre">
+            </div>
+            <div class="precio">
+                <label>Precio</label>
+                <input type="number" name="precio" id="precio">
+            </div>
+            <div class="descripcion">
+                <label>Descripción</label>
+                <input type="text" name="descripcion" id="descripcion">
+            </div>
+            <div class="img">
+                <label>Image</label>
+                <input type="file" name="file" id="" multiple>
+            </div>
+            <button type="submit">Publicar</button>
+        </form>
+    </main>
+</body>
+<script src="/js/index.js"></script>
+</html>
